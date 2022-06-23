@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/ren', function () {
     $data = [
         'name' => 'Ren',
         'lastname' => 'Amamiya',
@@ -38,5 +42,27 @@ Route::get('/', function () {
             ],
         ],
     ];
-    return view('home', $data);
-});
+    return view('ren', $data);
+})->name('ren');
+
+Route::get('/yu', function () {
+    $data = [
+        'name' => 'Yu',
+        'lastname' => 'Narukami',
+        'personae' => [
+            [
+                'name' => 'Izanagi',
+                'element' => 'Divino',
+                'resistance' => 'Fulmine, Maledetto',
+                'weakness' => 'Vento'
+            ],
+            [
+                'name' => 'Yoshitsune',
+                'element' => 'Fisico',
+                'resistance' => 'Fisico, Fuoco, Fulmine, Sacro',
+                'weakness' => 'None'
+            ],
+        ],
+    ];
+    return view('yu', $data);
+})->name('yu');
